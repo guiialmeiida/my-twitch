@@ -1,7 +1,9 @@
 import React from "react";
-import { Paper, Link } from "@material-ui/core";
-import { VideoLabel } from '@material-ui/icons'
 import { Link as RouterLink } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
+
+import { Paper, Link } from "@material-ui/core";
+import { VideoLabel } from "@material-ui/icons";
 
 const Header = () => {
   return (
@@ -19,12 +21,14 @@ const Header = () => {
         </Link>
       </div>
       <div style={{ marginRight: 20 }}>
-        <Link component={RouterLink} to="/" style={{ marginRight: 30 }}>
+        <Link
+          component={RouterLink}
+          to="/"
+          style={{ marginRight: 30 }}
+        >
           All Streams
         </Link>
-        <Link component={RouterLink} to="/">
-          Login
-        </Link>
+        <GoogleAuth />
       </div>
     </Paper>
   );
