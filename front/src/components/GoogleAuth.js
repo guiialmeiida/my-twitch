@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button, CircularProgress } from "@material-ui/core";
 
-const GoogleAuth = () => {
-  const [isSignedIn, setIsSignedIn] = useState(null);
+//REDUX
+import { connect } from "react-redux";
+import { signIn, signOut } from "../redux/actions";
 
+const GoogleAuth = ({ signIn, signOut, ...props }) => {
   useEffect(() => {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
@@ -13,22 +15,27 @@ const GoogleAuth = () => {
           scope: "email"
         })
         .then(() => {
-          const auth = window.gapi.auth2.getAuthInstance();
-          setIsSignedIn(auth.isSignedIn.get());
-          auth.isSignedIn.listen(() => setIsSignedIn(auth.isSignedIn.get()));
+          const auth = window.gapi.auth2.getAuthInstance().isSignedIn;
+          onAuthChange(auth.get());
+          auth.listen(onAuthChange);
         });
     });
   }, []);
 
+  const onAuthChange = isSignedIn => {
+    let userId = window.gapi.auth2.getAuthInstance().currentUser.get().getId()
+    isSignedIn ? signIn(userId) : signOut();
+  };
+
   const render = () => {
-    if (isSignedIn) {
+    if (props.isSignedIn) {
       return (
         <Login
           text="Sign out"
           handleClick={() => window.gapi.auth2.getAuthInstance().signOut()}
         />
       );
-    } else if (isSignedIn === null) {
+    } else if (props.isSignedIn === null) {
       return <CircularProgress size={30} />;
     } else {
       return (
@@ -50,4 +57,13 @@ const Login = ({ text, handleClick }) => (
   </Button>
 );
 
-export default GoogleAuth;
+const mapStateToProps = state => {
+  return {
+    isSignedIn: state.auth.isSignedIn,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { signIn, signOut }
+)(GoogleAuth);
