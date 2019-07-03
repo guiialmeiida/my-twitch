@@ -5,7 +5,7 @@ import GoogleAuth from "./GoogleAuth";
 import { Paper, Link } from "@material-ui/core";
 import { VideoLabel } from "@material-ui/icons";
 
-const Header = () => {
+const TopBar = () => {
   return (
     <Paper
       style={{
@@ -34,4 +34,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default TopBar;
