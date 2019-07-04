@@ -1,0 +1,14 @@
+{
+  "streams": [
+    {
+      "title": "teste",
+      "description": "batatinha",
+      "id": 1
+    },
+    {
+      "title": "jojoj",
+      "description": "jajaj",
+      "id": 2
+    }
+  ]
+}

@@ -6,14 +6,10 @@ import { Typography, Button } from "@material-ui/core";
 
 //Redux
 import { Field, reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import { createStream } from "../../../redux/actions";
 
-const StreamCreate = ({ handleSubmit }) => {
-  const renderError = ({ error, touched }) => {
-    if (touched && error) {
-      return <Typography color="error">{error}</Typography>;
-    }
-  };
-
+const StreamCreate = ({ handleSubmit, createStream }) => {
   const renderInput = ({ input, label, meta }) => {
     const { error, touched } = meta;
     return (
@@ -27,23 +23,28 @@ const StreamCreate = ({ handleSubmit }) => {
             autoComplete="off"
           />
         </label>
-        {renderError(meta)}
+        {!!error && touched ? (
+          <Typography color="error">{error}</Typography>
+        ) : (
+          ""
+        )}
       </>
     );
+  };
+  
+  const submit = formValues => {
+    validate(formValues);
+    createStream(formValues);
   };
 
   return (
     <>
-      <styled.form onSubmit={handleSubmit(validate)}>
+      <styled.form onSubmit={handleSubmit(submit)}>
         <Typography variant="h3">Create Stream</Typography>
         <Field name="title" component={renderInput} label="Title" />
         <Field name="description" component={renderInput} label="Description" />
         <styled.buttonWrapper>
-          <Button
-            variant="contained"
-            color="primary"
-            type="submit"
-          >
+          <Button variant="contained" color="primary" type="submit">
             Create
           </Button>
         </styled.buttonWrapper>
@@ -60,7 +61,12 @@ const validate = ({ title }) => {
   return errors;
 };
 
-export default reduxForm({
+const formWrapped = reduxForm({
   form: "streamCreate",
   validate
 })(StreamCreate);
+
+export default connect(
+  null,
+  { createStream }
+)(formWrapped);
