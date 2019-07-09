@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import GoogleAuth from "./GoogleAuth";
 
 import { Paper, Link } from "@material-ui/core";
-import { VideoLabel } from "@material-ui/icons";
+import { VideoLibrary } from "@material-ui/icons";
 
 const TopBar = () => {
   return (
@@ -17,7 +17,7 @@ const TopBar = () => {
     >
       <div style={{ marginLeft: 20 }}>
         <Link component={RouterLink} to="/">
-          <VideoLabel />
+          <VideoLibrary />
         </Link>
       </div>
       <div style={{ marginRight: 20 }}>
