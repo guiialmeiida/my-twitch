@@ -31,7 +31,7 @@ const StreamCreate = ({ handleSubmit, createStream }) => {
       </>
     );
   };
-  
+
   const submit = formValues => {
     validate(formValues);
     createStream(formValues);

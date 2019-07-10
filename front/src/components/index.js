@@ -1,6 +1,8 @@
 import React from "react";
 import TopBar from "./TopBar";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
+
+import history from '../history';
 
 import {
   StreamCreate,
@@ -13,14 +15,14 @@ import {
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <Router history={history}>
         <TopBar />
         <Route exact path="/" component={StreamList} />
         <Route exact path="/streams/new" component={StreamCreate} />
-        <Route exact path="/streams/edit" component={StreamEdit} />
+        <Route exact path="/streams/edit/:id" component={StreamEdit} />
         <Route exact path="/streams/delete" component={StreamDelete} />
         <Route exact path="/streams/show" component={StreamShow} />
-      </BrowserRouter>
+      </Router>
     </>
   );
 };

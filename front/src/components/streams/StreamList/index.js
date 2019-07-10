@@ -24,6 +24,8 @@ const StreamList = props => {
             variant="contained"
             color="primary"
             style={{ marginRight: 5 }}
+            component={Link}
+            to={`/streams/edit/${streams[i].id}`}
           >
             Edit
           </Button>
@@ -62,8 +64,11 @@ const StreamList = props => {
             variant="contained"
             color="primary"
             style={{ alignSelf: "flex-end", marginTop: 5 }}
+            className="button"
+            component={Link}
+            to="/streams/new"
           >
-            <Link to="/streams/new">Create Stream</Link>
+            Create Stream
           </Button>
         ) : null}
       </styled.List>
