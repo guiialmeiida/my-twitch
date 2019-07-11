@@ -5,3 +5,4 @@ export const GET_STREAMS = "GET_STREAMS";
 export const GET_STREAM = "GET_STREAM";
 export const DELETE_STREAM = "DELETE_STREAM";
 export const EDIT_STREAM = "EDIT_STREAM";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";

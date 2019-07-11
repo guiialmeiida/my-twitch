@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import StreamForm from "../Form";
 
 //Redux
 import { connect } from "react-redux";
@@ -12,17 +13,28 @@ const StreamEdit = props => {
       getStream(id);
     }
   }, []);
-  if(!stream){
-    return <>Loading...</>;
+
+  const onSubmit = formValues => {
+    const { title, description } = formValues;
+    editStream(id, { title, description });
+  };
+
+  if (stream) {
+    const { title, description } = stream;
+    return (
+      <StreamForm
+        initialValues={{ title, description }}
+        submitForm={onSubmit}
+        headerTitle="Edit Stream"
+        buttonText="edit"
+      />
+    );
   }
 
-  return (
-    <>
-      
-    </>
-  );
+  return <></>;
 };
 
+//ownProps são as props do componente StreamEdit
 const mapStateToProps = (state, ownProps) => {
   return { stream: state.streams[ownProps.match.params.id] };
 };
