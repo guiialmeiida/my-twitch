@@ -20,4 +20,5 @@ export const buttonWrapper = styled.div`
 export const TextField = styled(MUITextField)`
   width: 100%;
   height: 60px;
+  background-color: #F1EFE8 !important
 `;

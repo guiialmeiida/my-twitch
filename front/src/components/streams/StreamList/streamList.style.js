@@ -10,9 +10,11 @@ export const Paper = styled(MUIPaper)`
   align-items: center;
   justify-content: space-between;
   min-height: 60px;
+  background-color: #2D373A !important;
 `;
 
 export const Info = styled.div`
+  margin-left: 1vw;
   display: flex;
   flex-direction: row;
   align-items: center;

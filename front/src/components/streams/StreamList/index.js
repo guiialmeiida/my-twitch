@@ -21,6 +21,7 @@ const StreamList = props => {
       return (
         <div>
           <Button
+            className="button"
             variant="contained"
             color="primary"
             style={{ marginRight: 5 }}
@@ -29,7 +30,13 @@ const StreamList = props => {
           >
             Edit
           </Button>
-          <Button variant="contained" color="primary">
+          <Button
+            className="button"
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to={`/streams/delete/${streams[i].id}`}
+          >
             Delete
           </Button>
         </div>
@@ -43,9 +50,13 @@ const StreamList = props => {
         <styled.Paper key={id}>
           <styled.Info>
             <Laptop color="primary" fontSize="large" />
-            <div style={{ marginLeft: 5 }}>
-              <Typography variant="h4">{title}</Typography>
-              <Typography variant="inherit">{description}</Typography>
+            <div style={{ marginLeft: "1vw" }}>
+              <Typography variant="h4" color="textPrimary">
+                {title}
+              </Typography>
+              <Typography variant="inherit" color="textPrimary">
+                {description}
+              </Typography>
             </div>
           </styled.Info>
           {handleButtons(index)}
@@ -56,14 +67,16 @@ const StreamList = props => {
 
   return (
     <styled.Wrapper>
-      <Typography variant="h3">Streams</Typography>
+      <Typography variant="h3" color="textPrimary">
+        Streams
+      </Typography>
       <styled.List>
         {renderStreams()}
         {isSignedIn ? (
           <Button
             variant="contained"
             color="primary"
-            style={{ alignSelf: "flex-end", marginTop: 5 }}
+            style={{ alignSelf: "flex-end", marginTop: 5, marginRight: 10 }}
             className="button"
             component={Link}
             to="/streams/new"

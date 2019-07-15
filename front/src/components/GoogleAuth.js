@@ -23,7 +23,10 @@ const GoogleAuth = ({ signIn, signOut, ...props }) => {
   }, []);
 
   const onAuthChange = isSignedIn => {
-    let userId = window.gapi.auth2.getAuthInstance().currentUser.get().getId()
+    let userId = window.gapi.auth2
+      .getAuthInstance()
+      .currentUser.get()
+      .getId();
     isSignedIn ? signIn(userId) : signOut();
   };
 
@@ -51,15 +54,20 @@ const GoogleAuth = ({ signIn, signOut, ...props }) => {
 };
 
 const Login = ({ text, handleClick }) => (
-  <Button variant="contained" color="primary" onClick={handleClick}>
-    <i className="google icon" style={{ marginBottom: 13, marginRight: 5 }} />
+  <Button
+    variant="contained"
+    color="secondary"
+    onClick={handleClick}
+    className="button"
+  >
+    <i className="google icon" style={{ marginBottom: "1vh", marginRight: 5 }} />
     {text}
   </Button>
 );
 
 const mapStateToProps = state => {
   return {
-    isSignedIn: state.auth.isSignedIn,
+    isSignedIn: state.auth.isSignedIn
   };
 };
 

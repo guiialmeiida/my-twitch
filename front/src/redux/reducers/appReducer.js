@@ -5,7 +5,7 @@ const INIT_STATE = {
 };
 
 export default (state = INIT_STATE, action) => {
-  switch (action.types) {
+  switch (action.type) {
     case types.TOGGLE_MODAL:
       return { ...state, modal: action.payload };
     default:
