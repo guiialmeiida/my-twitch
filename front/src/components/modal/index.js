@@ -47,12 +47,10 @@ const Modal = props => {
             variant="contained"
             color="secondary"
             onClick={onConfirm}
-            className="button"
           >
             {buttonText}
           </Button>
           <Button
-            className="button"
             variant="contained"
             color="primary"
             onClick={() => modalChange(false)}

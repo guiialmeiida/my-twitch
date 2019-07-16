@@ -21,7 +21,6 @@ const StreamList = props => {
       return (
         <div>
           <Button
-            className="button"
             variant="contained"
             color="primary"
             style={{ marginRight: 5 }}
@@ -31,7 +30,6 @@ const StreamList = props => {
             Edit
           </Button>
           <Button
-            className="button"
             variant="contained"
             color="secondary"
             component={Link}
@@ -77,7 +75,6 @@ const StreamList = props => {
             variant="contained"
             color="primary"
             style={{ alignSelf: "flex-end", marginTop: 5, marginRight: 10 }}
-            className="button"
             component={Link}
             to="/streams/new"
           >

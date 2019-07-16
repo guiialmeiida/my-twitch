@@ -15,10 +15,11 @@ export const buttonWrapper = styled.div`
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  margin-top: 5px;
 `
 
 export const TextField = styled(MUITextField)`
   width: 100%;
   height: 60px;
-  background-color: #F1EFE8 !important
+  background-color: #2D373A !important;
 `;

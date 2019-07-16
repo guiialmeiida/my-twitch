@@ -10,9 +10,10 @@ body {
 }
 
 a {
-    color: white;
+    color: #F1EFE8;
 }
 
-.button a:hover {
+a:hover {
     color: white !important;
+    text-decoration: none !important;
 }

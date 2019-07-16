@@ -28,7 +28,6 @@ const StreamForm = props => {
             variant="contained"
             color="primary"
             type="submit"
-            className="button"
           >
             {buttonText}
           </Button>

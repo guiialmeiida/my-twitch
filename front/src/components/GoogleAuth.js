@@ -58,7 +58,6 @@ const Login = ({ text, handleClick }) => (
     variant="contained"
     color="secondary"
     onClick={handleClick}
-    className="button"
   >
     <i className="google icon" style={{ marginBottom: "1vh", marginRight: 5 }} />
     {text}
