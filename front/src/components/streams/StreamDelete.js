@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import history from "../../../history";
+import history from "../../history";
 
-import Modal from "../../modal";
+import Modal from "../modal";
 
 //Redux
 import { connect } from "react-redux";
-import { getStream, deleteStream } from "../../../redux/actions";
+import { getStream, deleteStream } from "../../redux/actions";
 
 const StreamDelete = props => {
   const { getStream, deleteStream, stream, match } = props;

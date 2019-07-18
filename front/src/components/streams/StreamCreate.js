@@ -1,9 +1,9 @@
 import React from "react";
-import StreamForm from "../Form";
+import StreamForm from "./Form";
 
 //Redux
 import { connect } from "react-redux";
-import { createStream } from "../../../redux/actions";
+import { createStream } from "../../redux/actions";
 
 const StreamCreate = props => {
   const { createStream } = props;

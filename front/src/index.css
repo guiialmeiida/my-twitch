@@ -17,3 +17,8 @@ a:hover {
     color: white !important;
     text-decoration: none !important;
 }
+
+a.title:hover {
+    color: #B38B58 !important;
+    text-decoration: none !important;
+}

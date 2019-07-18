@@ -6,7 +6,7 @@ import App from "./components";
 //UI
 import "./index.css";
 import { MuiThemeProvider } from "@material-ui/core/styles";
-import palette from './palette';
+import palette from "./palette";
 
 //Redux
 import { Provider } from "react-redux";
@@ -23,7 +23,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider theme={palette}>
-    <App />
+      <App />
     </MuiThemeProvider>
   </Provider>,
   document.getElementById("root")

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import StreamForm from "../Form";
+import StreamForm from "./Form";
 
 //Redux
 import { connect } from "react-redux";
-import { editStream, getStream } from "../../../redux/actions";
+import { editStream, getStream } from "../../redux/actions";
 
 const StreamEdit = props => {
   const { stream, editStream, getStream, match } = props;
