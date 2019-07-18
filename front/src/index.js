@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+//const NodeMediaServer = require('node-media-server');
+
 import App from "./components";
 
 //UI

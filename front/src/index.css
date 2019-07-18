@@ -18,7 +18,6 @@ a:hover {
     text-decoration: none !important;
 }
 
-a.title:hover {
+a:hover.title {
     color: #B38B58 !important;
-    text-decoration: none !important;
 }

@@ -49,8 +49,8 @@ const StreamList = props => {
           <styled.Info>
             <Laptop color="primary" fontSize="large" />
             <div style={{ marginLeft: "1vw" }}>
-              <Link to={`/stream/${id}`} className="title">
-                <Typography variant="h4" color="textPrimary">
+              <Link to={`/streams/${id}`} className="title">
+                <Typography variant="h4" color="inherit">
                   {title}
                 </Typography>
               </Link>
