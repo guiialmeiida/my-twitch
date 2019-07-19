@@ -1,18 +1,13 @@
 {
   "streams": [
     {
-      "title": "teste",
-      "description": "batatinha",
+      "title": "Birds are awesome!",
+      "description": "they are absolutly amazing",
       "id": 1
     },
     {
-      "title": "jojoj",
-      "description": "jajaj",
-      "id": 2
-    },
-    {
-      "title": "xuux",
-      "description": "xaax",
+      "title": "ASMR?",
+      "description": ":)",
       "userId": "118194151980029138897",
       "id": 3
     }
